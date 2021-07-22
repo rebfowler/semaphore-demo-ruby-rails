@@ -21,3 +21,10 @@ blocks:
           commands:
             - checkout
             - cat README.md
+  - name: 'Block #2'
+    dependencies: []
+    task:
+      jobs:
+        - name: 'Job #1'
+          commands:
+            - ls
