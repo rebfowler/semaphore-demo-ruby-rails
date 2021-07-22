@@ -1,4 +1,5 @@
 # Semaphore demo CI/CD pipeline using Ruby on Rails
+xyz
 
 [![Build Status](https://semaphore-demos.semaphoreci.com/badges/semaphore-demo-ruby-rails/branches/fork-and-run.svg)](https://semaphore-demos.semaphoreci.com/projects/semaphore-demo-ruby-rails)
 
