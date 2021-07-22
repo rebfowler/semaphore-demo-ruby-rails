@@ -1,15 +1,15 @@
 version: v1.0
-name: Demo Rails 6 app
+name: Pipeline-test
 agent:
   machine:
     type: e1-standard-2
     os_image: ubuntu1804
 blocks:
-  - name: Setup
+  - name: Setup (block)
     dependencies: []
     task:
       jobs:
-        - name: bundle
+        - name: bundle (job 1)
           commands:
             - sem-version ruby 2.7.3
             - sem-version node 14.16.1
@@ -17,3 +17,7 @@ blocks:
             - cache restore
             - bundle install
             - cache store
+        - name: Test (job 2)
+          commands:
+            - checkout
+            - cat README.md
