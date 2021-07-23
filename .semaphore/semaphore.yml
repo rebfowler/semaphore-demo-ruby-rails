@@ -5,27 +5,20 @@ agent:
     type: e1-standard-2
     os_image: ubuntu1804
 blocks:
-  - name: Setup (block)
+  - name: Unit test (block)
     dependencies: []
     task:
       jobs:
-        - name: bundle (job 1)
-          commands:
-            - sem-version ruby 2.7.3
-            - sem-version node 14.16.1
-            - checkout
-            - cache restore
-            - bundle install
-            - cache store
-        - name: Test (job 2)
+        - name: 'Unite Test '
           commands:
             - checkout
             - cat README.md
-  - name: 'Block #2'
+  - name: Integration Tests
     dependencies:
-      - Setup (block)
+      - Unit test (block)
     task:
       jobs:
-        - name: 'Job #1'
+        - name: Test
           commands:
             - ls
+          parallelism: 10
